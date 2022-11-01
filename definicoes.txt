@@ -1,0 +1,131 @@
+JAVA:
+
+variavel de objeto (ou atributo) - variavel declarada...
+... dentro do escopo da classe;
+interface da classe: conjunto de metodos publicos da classe
+getAtributo -> muda o valor do atributo
+setAtributo -> retorna o valor do atributo
+isAtributo -> para atributos booleans
+composição: uma classe composta de outra classe, ao invés
+da utilização de herança (veja abaixo);
+public class Gerente extends Funcionario -> ...
+... declaracao da classe Gerente que herda Funcionario
+@Override -> colocado sobre um metodo reescrito
+super -> (ex.: super.metodo() ) chama o metodo da classe...
+... mãe, dentro da classe filho
+--
+* obs.: no uso de herança, é bom deixar a classe mãe e
+filhas num mesmo pacote diferente do pacote de outras
+classes, para que essas nao acessam os protecteds
+--
+abstract (class) -> (ex.: public abstract class Nome) ...
+... usada para impedir que tal classe seja instanciada
+(por exemplo quando nao faz sentido termos um objeto
+que seja apenas do tipo mãe, ao invés de um filho)
+abstract (metodo) -> (ex.: public abstract tipo Metodo(); )
+usado quando nao temos um metodo padrão, mas todas as
+classes filhas devem ter esse método. (é tipo um prototipo
+de funcao (metodo) que fica na classe mae)
+---
+interface -> (ex.: public interface NomeInterface {) ...
+funciona como uma classe que possui prototipos de funcoes
+(metodos) onde a classe que a imlementar deve, 
+obrigatoriamente, ter a implementacao de seus metodos.
+(ex. de uso: public class Nome implements NomeInterface {)
+uma interface pode ter implementacoes default de metodos;
+OBS.: É ACONSELHADO O USO DE INTERFACE AO INVÉS DE HERANÇA;
+---
+System.exit(0);
+instanceof -> (ex.: objeto instanceof NomeDaClasse)...
+... retorna true se o objeto for uma instancia de tal...
+... classe, e false se nao for.
+--- arrays:
+tipo[] array = new tipo[qtd];
+uma array de tipos primitivos guarda valores
+uma array de objetos guarda referencias
+array.langth -> é o tamanho da array
+enhanced-for -> for (int x : array)
+--- Colections Framework:
+Generics -> List<Tipo> nome = new ArrayList<>();
+utilizado para garantir que uma lista será do tipo Tipo
+no lugar de ArrayList, pode haver outra classe do .util
+Collections.sort(classeDeCollections); -> ordena a classe
+collection.add(object) -> add object na collection
+collection.remove(object) -> remove object da collection
+collection.size() -> retorna qtd de elementos da collection
+collection.contains(object) -> retorna true se object E
+collection.iterator() -> retorna objeto iterador
+iterator.hasNext() -> retorna true se E um prox elemento
+iterator.next() -> retorna o proximo objeto
+Map<tipoChave, tipoObjeto> map = new HashMap<>(); ->
+declaracao de um objeto do tipo Map
+map.put(variavelChave, variavelObjeto) -> inclui novo map
+map.get(variavelChave) -> retorna objeto relativo à chave
+--- String:
+string.equals(outraString) -> retorna true se o CONTEUDO
+das strings forem iguais, e não se a REFERENCIA for igual.
+string.compareTo(outraString) -> análogo à strcmp em c;
+string = string.toUpperCase() -> análogo à strupr em c;
+string = string.toLowerCase() -> análogo à strlwr em c;
+string = string.replace("a", "b") -> troca a por b;
+string.charAt(i) -> retorna o caractere da posicao i;
+string.length() -> retorna o numero de caracteres da string
+string.substring(i) -> retorna a substring a partir de i;
+string.indexOf(str) -> retorna o índice em que str (char ou
+String) aparece pela prieira vez em string;
+string.lastIndexOf(str) -> análogo, mas retorna o último i;
+string.isEmpty -> retorna true se string for vazia;
+contains e matches -> metodos para buscas (ctrl+f)
+StringBuffer -> mais parecido com a "string" em c (char[]),
+pois é mutável e é criada na hora, ao invés da utilizacao
+de um pool. deve ser usada no lugar de String quando
+muitas ações serão usadas com uma mesma string (por exemplo
+dentro de um loop);
+--- java.io:
+throws IOException { -> deve ser usada para controlar erro
+na abertura do arquivo, como "arquivo.txt" nao encontrado
+InputStream is = new FileInputStream("arquivo.txt"); ->
+declaracao de um FILE *pa, e abertura de arquivo.txt
+ou
+InputStream is = new System.in; -> para ler do teclado...
+... usamos BufferedReader br e String s = br.readLine()...
+... também, para que a leitura seja uma String;
+is.read(); -> retorna um int do arquivo carregado em is
+InputStreamReader isr = new InputStreamReader(is); ->
+declaracao de um objeto que traduz os bytecodes para char
+isr.read(); -> retorna um int unicode de um bytecode;
+BufferedReader br = new BufferedReader(isr); -> declara o
+Reader br usado para ler strings:
+String s = br.readLine(); -> copiando o conteudo para s
+br.close(); -> libera memoria de br após a utilizacao
+
+
+
+
+
+
+
+jar -cvf [nomeArq.jar] [dirArq1.class] [dirArq2.class] etc.
+java -classpath [nomeArq.jar] [dir1.dir2.ProgMain]
+java -jar [nomeArq.jar]
+
+
+Eclipse:
+syso - System.out.println();
+main - public static void main(String[] args);
+
+ctrl + shift + L - exibe todos os atalhos possiveis
+ctrl + 1 - quick fixes (corrige erros)
+ctrl + Espaço - code assist (completa codigos)
+ctrl + 3 - modo descoberta do menu
+ctrl + 11 - "recompila" (java nao é compilado)
+ctrl + pgUp/pgDown - navega entre as abas abertas
+ctrl + o - exibe um outline para rapida navegacao
+alt + shift + s - generate getters and setters
+ou ctrl + 3 (ggas);
+segurar CONTROL + botao esquerdo = F3 + cursor
+
+refactoring (refactor) - muda nome de variavel, etc.
+
+GUI - project->propreties->java build path->libraries->
+add external jars;

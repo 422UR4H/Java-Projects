@@ -1,0 +1,25 @@
+CHAMANDO OUTRO CONSTRUTOR
+
+Um construtor só pode rodar durante a construção do objeto, isto é,
+você nunca conseguirá chamar o construtor em um objeto já construído.
+Porém, durante a construção de um objeto, você pode fazer com que um
+construtor chame outro, para não ter de ficar copiando e colando:
+
+
+class Conta {
+	String titular;
+	int numero;
+	double saldo;
+
+	// construtor
+	Conta (String titular) {
+		// faz mais uma série de inicializações e configurações
+		this.titular = titular;
+	}
+
+	Conta (int numero, String titular) {
+		this(titular); // chama o construtor que foi declarado acima
+		this.numero = numero;
+	}
+	//..
+}

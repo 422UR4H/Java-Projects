@@ -1,0 +1,5 @@
+
+comandos
+copy con - para editar o programa
+type - para listar o programa
+notepad - para abrir com o notepad
